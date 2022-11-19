@@ -1,0 +1,27 @@
+.directoriesNavigation {
+    border: 3px solid green;
+}
+
+.deadlineDirectories {
+    border: 3px solid orange;
+}
+
+.directories {
+    border: 3px solid blue;
+}
+
+.directory {
+    border: 3px solid gray;
+}
+
+.deadlineDirectory {
+    border: 3px solid gray;
+}
+
+.activeDirectory {
+    border: 3px solid red;
+}
+
+.activeDeadlineDirectory {
+    border: 3px solid yellow;
+}

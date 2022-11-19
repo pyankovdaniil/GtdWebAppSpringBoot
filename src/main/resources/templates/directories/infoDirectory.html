@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/directoryStyles/mainStyles.css" rel="stylesheet"/>
+    <title>Info</title>
+</head>
+<body>
+<div class="directoriesNavigation">
+    <div class="deadlineDirectories">
+        <div class="deadlineDirectory" th:each="directory: ${directoryList}"
+             th:if="${directory.getId() == 5 || directory.getId() == 6}">
+            <a class="directoryRef"
+               th:href="@{/directories/{directoryName}(directoryName=${directory.getName().toLowerCase()})}"
+               th:text="${directory.getName()}">Ref to a directory</a>
+        </div>
+    </div>
+    <div class="directories">
+        <div class="directory" th:each="directory: ${directoryList}"
+             th:if="${directory.getId() != 5 && directory.getId() != 6}"
+             th:classappend="${directory.getId() == 3} ? activeDirectory">
+            <a class="directoryRef"
+               th:href="@{/directories/{directoryName}(directoryName=${directory.getName().toLowerCase()})}"
+               th:text="${directory.getName()}">Ref to a directory</a>
+        </div>
+    </div>
+</div>
+<div class="notes">
+    <div class="note" th:each="note, ind: ${notes}">
+        <div class="noteInfo">
+            <div class="noteText">
+                <div class="noteName" th:text="${note.getName()}">Note name</div>
+                <div class="noteDescription" th:text="${note.getDescription()}">Note description</div>
+            </div>
+            <div class="noteDeadline" th:text="${note.getDeadline()}">Note deadline</div>
+        </div>
+        <div class="moveButton">
+            <form th:method="PATCH" th:action="@{/notes/{id}(id=${notes.get(ind.index).getId()})}">
+                <label for="noteSelect">Выберите папку: </label>
+                <select th:object="${note}"
+                        th:field="*{id}"
+                        id="noteSelect"
+                        class="directorySelect">
+                    <option th:each="directory: ${directoryList}"
+                            th:if="${directory.getId() != 5 && directory.getId() != 6}"
+                            th:value="${directory.getId()}"
+                            th:text="${directory.getName()}"
+                            class="directoryOption">
+                    </option>
+                </select>
+                <input type="submit" value="Переместить!"/>
+            </form>
+        </div>
+        <div class="deleteButton">
+            <form th:method="DELETE" th:action="@{/notes/{id}(id=${notes.get(ind.index).getId()})}">
+                <input type="submit" value="Удалить" class="deleteNoteButton">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="newNote">
+    <form th:method="GET" th:action="@{/notes/new}">
+        <input type="submit" value="Создать новую заметку"/>
+    </form>
+</div>
+</body>
+</html>
