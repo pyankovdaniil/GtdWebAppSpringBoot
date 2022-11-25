@@ -60,4 +60,19 @@ public class NoteServiceImplementation implements NoteService {
             }
         }
     }
+
+    @Override
+    @Transactional
+    public void updateNoteInfoById(int id, Note updatedNote) {
+        Note oldNote = noteRepository.findById(id).get();
+        oldNote.setName(updatedNote.getName());
+        oldNote.setDescription(updatedNote.getDescription());
+        oldNote.setDeadline(updatedNote.getDeadline());
+        saveNote(oldNote);
+    }
+
+    @Override
+    public List<Note> getNotesByName(String name) {
+        return noteRepository.getNotesByName(name);
+    }
 }

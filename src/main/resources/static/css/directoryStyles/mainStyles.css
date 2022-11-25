@@ -1,27 +1,17 @@
-.directoriesNavigation {
-    border: 3px solid green;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.deadlineDirectories {
-    border: 3px solid orange;
+@font-face {
+    font-family: "Fira Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/FiraSans-Regular.ttf');
 }
 
-.directories {
-    border: 3px solid blue;
-}
-
-.directory {
-    border: 3px solid gray;
-}
-
-.deadlineDirectory {
-    border: 3px solid gray;
-}
-
-.activeDirectory {
-    border: 3px solid red;
-}
-
-.activeDeadlineDirectory {
-    border: 3px solid yellow;
+body {
+    font-family: "Fira Sans";
+    color: #dfe3de;
+    background-color: #181818;
 }

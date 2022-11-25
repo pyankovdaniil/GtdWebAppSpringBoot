@@ -42,13 +42,19 @@
                         id="noteSelect"
                         class="directorySelect">
                     <option th:each="directory: ${directoryList}"
-                            th:if="${directory.getId() != 5 && directory.getId() != 6}"
+                            th:if="${directory.getId() != 5 && directory.getId() != 6 && directory.getId() != 1
+                                && directory.getId() != 2}"
                             th:value="${directory.getId()}"
                             th:text="${directory.getName()}"
                             class="directoryOption">
                     </option>
                 </select>
                 <input type="submit" value="Переместить!"/>
+            </form>
+        </div>
+        <div class="updateButton">
+            <form th:method="GET" th:action="@{/notes/{id}/edit(id=${notes.get(ind.index).getId()})}">
+                <input type="submit" value="Редактировать" class="updateNoteButton">
             </form>
         </div>
         <div class="deleteButton">

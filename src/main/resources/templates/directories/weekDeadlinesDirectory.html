@@ -34,6 +34,11 @@
             </div>
             <div class="noteDeadline" th:text="${note.getDeadline()}">Note deadline</div>
         </div>
+        <div class="updateButton">
+            <form th:method="GET" th:action="@{/notes/{id}/edit(id=${notes.get(ind.index).getId()})}">
+                <input type="submit" value="Редактировать" class="updateNoteButton">
+            </form>
+        </div>
         <div class="deleteButton">
             <form th:method="DELETE" th:action="@{/notes/{id}(id=${notes.get(ind.index).getId()})}">
                 <input type="submit" value="Удалить" class="deleteNoteButton">
