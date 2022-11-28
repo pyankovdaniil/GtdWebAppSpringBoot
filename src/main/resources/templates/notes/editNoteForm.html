@@ -2,27 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link href="/css/directoryStyles/mainStyles.css" rel="stylesheet"/>
+    <link href="/css/noteStyles/mainStyles.css" rel="stylesheet"/>
     <title>Edit your note</title>
 </head>
 <body>
 <form th:method="PATCH" th:action="@{/notes/{directoryName}/{id}/edit(directoryName=${directoryName}, id=${note.getId()})}"
-      th:object="${note}">
-    <label for="name">Введите новое название: </label>
-    <input type="text" th:field="*{name}" id="name"/>
+      th:object="${note}" class="inputForm">
+    <label for="name" class="inputLabel">Название</label>
+    <input type="text" th:field="*{name}" id="name" class="noteInput"/>
     <div class="errorMessage" style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
     <br/>
 
-    <label for="description">Введите новое описание: </label>
-    <input type="text" th:field="*{description}" id="description"/>
+    <label for="description" class="inputLabel">Описание</label>
+    <input type="text" th:field="*{description}" id="description" class="noteInput"/>
     <div class="errorMessage" style="color:red" th:if="${#fields.hasErrors('description')}" th:errors="*{name}"></div>
     <br/>
 
-    <label for="deadline">Введите новый дедлайн: </label>
-    <input type="text" th:field="*{deadline}" id="deadline"/>
+    <label for="deadline" class="inputLabel">Дедлайн</label>
+    <input type="text" th:field="*{deadline}" id="deadline" class="noteInput"/>
     <div class="errorMessage" style="color:red" th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}"></div>
     <br/>
 
-    <input type="submit" value="Редактировать!"/>
+    <input type="submit" value="Редактировать!" class="formNoteButton"/>
 </form>
 </body>
 </html>

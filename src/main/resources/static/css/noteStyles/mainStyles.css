@@ -1,3 +1,150 @@
-.deleteNoteButton {
+.notes {
+    display: inline-block;
+    width: 70vw;
+    margin: 10vh 0 10vh 2vw;
+    height: 80vh;
+    position: absolute;
+}
 
+.note {
+    margin-bottom: 15px;
+    border-radius:0.25em;
+    border: 5px solid #7d9f7c;
+    padding: 15px;
+}
+
+.noteInfo {
+    display: inline-block;
+}
+
+.noteText {
+    display: inline-block;
+
+}
+
+.noteName {
+    font-size: 30pt;
+    display: inline;
+    margin-right: 1em;
+    border-bottom: 3px solid #f9dd94;
+}
+
+.noteDescription {
+    font-size: 20pt;
+    margin-top: 5px;
+    margin-right: 1em;
+}
+
+.noteDeadline {
+    display: inline;
+    height: 100%;
+    border: 2px solid #b93939;
+    font-size: 20pt;
+    font-weight: bold;
+    color: #e87979;
+}
+
+
+.inputForm {
+    display: inline-block;
+    margin: 20vh 25vw;
+    height: 60vh;
+    width: 50vw;
+}
+
+.inputLabel {
+    font-size: 25pt;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+.noteInput {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background: #181818;
+    border-radius: 0.3em;
+    outline: none;
+    color: #fff;
+    font-size: 25pt;
+    margin-bottom: 20px;
+}
+
+.noteInput:focus {
+    color: #5b5be8;
+}
+
+.errorMessage {
+
+}
+
+.moveButton, .deleteButton, .updateButton, .formNoteButton {
+    display: inline-block;
+}
+
+.newNoteButton, .moveNoteButton, .deleteNoteButton, .updateNoteButton, .formNoteButton {
+    padding:0.7em 1.4em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.55em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    text-transform:uppercase;
+    font-weight:400;
+    color:#FFFFFF;
+    background-color:#3369ff;
+    border: 1px solid #3369ff;
+    box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+    text-align:center;
+    position:relative;
+}
+
+.newNoteButton:active, .moveNoteButton:active, .deleteNoteButton:active, .updateNoteButton:active,
+.formNoteButton {
+    top:0.1em;
+}
+
+.updateNoteButton {
+    background-color: #087300;
+    border: 1px solid #087300;
+}
+
+.deleteNoteButton {
+    background-color: #7c0018;
+    border: 1px solid #7c0018;
+}
+
+.moveNoteButton {
+    background-color: #9a5200;
+    border: 1px solid #9a5200;
+}
+
+@media all and (max-width:30em){
+    .newNoteButton, .moveNoteButton, .deleteNoteButton, .updateNoteButton, .formNoteButton {
+        margin:0.4em auto;
+    }
+}
+
+.formNoteButton {
+    background-color: #005f6c;
+    border: 1px solid #005f6c;
+}
+
+.directorySelect {
+    width: 150px;
+    min-height: 35px;
+    background: #4141da;
+    outline: none;
+    border: 2px solid #3232a2;
+    border-radius: 0.3em;
+    padding: 5px 10px;
+    font-size: 15pt;
+}
+
+.directoryOption {
+    background-color: #4141da;
+}
+
+.directoryOption:hover {
+    background-color: #2e2e9f;
 }

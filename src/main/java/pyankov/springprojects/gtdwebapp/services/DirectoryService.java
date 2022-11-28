@@ -1,6 +1,5 @@
 package pyankov.springprojects.gtdwebapp.services;
 
-import org.springframework.stereotype.Service;
 import pyankov.springprojects.gtdwebapp.models.Directory;
 import pyankov.springprojects.gtdwebapp.models.Note;
 

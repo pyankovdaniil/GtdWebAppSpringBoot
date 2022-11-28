@@ -12,6 +12,56 @@
 
 body {
     font-family: "Fira Sans";
-    color: #dfe3de;
+    color: #f1f3f1;
     background-color: #181818;
+}
+
+.directoriesNavigation {
+    display: inline-block;
+    width: 20vw;
+    height: 100vh;
+    position: relative;
+}
+
+.deadlineDirectories {
+    border: 5px solid #af6f01;
+    margin: 20vh 1vw 0 2vw;
+}
+
+.deadlineDirectory {
+    border: 5px solid #a28922;
+    margin: 3vh 2vw;
+    text-align: center;
+    font-size: 20pt;
+}
+
+.activeDeadlineDirectory {
+    border: 5px solid #fdd918;
+    border-radius:0.55em;
+    margin: 2vh 1vw;
+    font-size: 25pt;
+}
+
+.directories {
+    margin: 5vh 1vw 0 2vw;
+    border: 5px solid #949393;
+}
+
+.directory {
+    border: 5px solid #dcdcdc;
+    margin: 3vh 2vw;
+    text-align: center;
+    font-size: 20pt;
+}
+
+.directoryRef {
+    text-decoration: none;
+    color: #f1f3f1;
+}
+
+.activeDirectory {
+    border: 5px solid red;
+    margin: 2vh 1vw;
+    font-size: 25pt;
+    border-radius:0.55em;
 }

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link href="/css/directoryStyles/mainStyles.css" rel="stylesheet"/>
+    <link href="/css/noteStyles/mainStyles.css" rel="stylesheet"/>
     <title>Week deadlines</title>
 </head>
 <body>
@@ -32,8 +33,8 @@
                 <div class="noteName" th:text="${note.getName()}">Note name</div>
                 <div class="noteDescription" th:text="${note.getDescription()}">Note description</div>
             </div>
-            <div class="noteDeadline" th:text="${note.getDeadline()}">Note deadline</div>
         </div>
+        <div class="noteDeadline" th:text="${note.getDeadline()}">Note deadline</div>
         <div class="updateButton">
             <form th:method="GET" th:action="@{/notes/{id}/edit(id=${notes.get(ind.index).getId()})}">
                 <input type="submit" value="Редактировать" class="updateNoteButton">

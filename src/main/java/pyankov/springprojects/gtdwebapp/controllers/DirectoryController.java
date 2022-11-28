@@ -10,7 +10,6 @@ import pyankov.springprojects.gtdwebapp.models.Note;
 import pyankov.springprojects.gtdwebapp.services.DirectoryService;
 import pyankov.springprojects.gtdwebapp.validators.NoteValidator;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 

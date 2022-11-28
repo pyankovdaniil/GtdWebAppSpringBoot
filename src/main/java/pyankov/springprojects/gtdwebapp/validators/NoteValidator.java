@@ -33,8 +33,12 @@ public class NoteValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Note note = (Note) target;
 
+        if (note.getName().length() >= 80) {
+            errors.rejectValue("name", "", "Слишком длинное название заметки");
+            return;
+        }
+
         List<Note> sameNameList = noteService.getNotesByName(note.getName());
-        System.out.println(sameNameList);
         for (Note n : sameNameList) {
             if (note.getDescription().equals(n.getDescription()) && !(noteBeforeChanging != null
                     && noteBeforeChanging.getName().equals(n.getName())
@@ -46,7 +50,7 @@ public class NoteValidator implements Validator {
 
         int[] deadlineDates = new int[3];
         String[] datesString = note.getDeadline().split("\\.");
-        if (datesString.length != 3) {
+        if (datesString.length != 3 || note.getDeadline().length() != 10) {
             errors.rejectValue("deadline", "", "Некорректный вид дедлайна");
             return;
         }

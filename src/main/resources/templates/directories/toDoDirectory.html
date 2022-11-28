@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="/css/directoryStyles/mainStyles.css" rel="stylesheet"/>
+    <link href="/css/noteStyles/mainStyles.css" rel="stylesheet"/>
     <title>ToDo</title>
 </head>
 <body>
@@ -32,12 +33,11 @@
                 <div class="noteName" th:text="${note.getName()}">Note name</div>
                 <div class="noteDescription" th:text="${note.getDescription()}">Note description</div>
             </div>
-            <div class="noteDeadline" th:text="${note.getDeadline()}">Note deadline</div>
         </div>
+        <div class="noteDeadline" th:text="${note.getDeadline()}">Note deadline</div>
         <div class="moveButton">
             <form th:method="PATCH" th:action="@{/notes/{id}(id=${notes.get(ind.index).getId()})}">
-                <label for="noteSelect">Выберите папку: </label>
-                <select th:object="${note}"
+                 <select th:object="${note}"
                         th:field="*{id}"
                         id="noteSelect"
                         class="directorySelect">
@@ -49,7 +49,7 @@
                             class="directoryOption">
                     </option>
                 </select>
-                <input type="submit" value="Переместить!"/>
+                <input type="submit" value="Переместить!" class="moveNoteButton"/>
             </form>
         </div>
         <div class="updateButton">
@@ -63,11 +63,11 @@
             </form>
         </div>
     </div>
-</div>
-<div class="newNote">
-    <form th:method="GET" th:action="@{/notes/new}">
-        <input type="submit" value="Создать новую заметку"/>
-    </form>
+    <div class="newNote">
+        <form th:method="GET" th:action="@{/notes/new}">
+            <input type="submit" value="Создать новую заметку" class="newNoteButton"/>
+        </form>
+    </div>
 </div>
 </body>
 </html>
