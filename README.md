@@ -92,6 +92,6 @@ create table note_directory
 
 ![img_3.png](img/img_3.png)
 
-5. /notes/{id}/edit - если не прошла валидация ()
+5. /notes/{id}/edit - если не прошла валидация
 
 ![img_5.png](img/img_5.png)
